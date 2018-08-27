@@ -2,6 +2,7 @@ function onReady () {
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
+  var toDos = [];
 
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -34,9 +35,9 @@ function onReady () {
     // attach the delete button to the li next to checkbox?
     newLi.appendChild(deleteBtn);
 
-    // add delete event listener
-    deleteBtn.addEventListener("click", function () {
-      Node.removeChild (nextToDoText.value);
+    //add delete event listener
+    deleteBtn.addEventListener("click", function() {
+      toDoList.removeChild(newLi);
     });
 
     // attach the li to the ul
